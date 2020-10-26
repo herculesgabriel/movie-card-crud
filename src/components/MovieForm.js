@@ -55,6 +55,10 @@ class MovieForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    console.log(this.props)
+  }
+
   handleSubmit() {
     const { onSubmit } = this.props;
     onSubmit(this.state);
@@ -201,6 +205,7 @@ class MovieForm extends React.Component {
   }
 }
 
+
 MovieForm.propTypes = {
   movie: PropTypes.shape({
     id: PropTypes.number.isRequired,
@@ -211,7 +216,7 @@ MovieForm.propTypes = {
     storyline: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
     bookmarked: PropTypes.bool.isRequired,
-  }).isRequired,
+  }),
   onSubmit: PropTypes.func.isRequired,
 };
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { Loading, MovieForm } from '../components';
+import Wrapper from '../styles/Wrapper';
 import * as movieAPI from '../services/movieAPI';
 
 class EditMovie extends Component {
@@ -54,9 +55,9 @@ class EditMovie extends Component {
     }
 
     return (
-      <div data-testid="edit-movie">
+      <Wrapper data-testid="edit-movie">
         <MovieForm movie={movie} onSubmit={this.handleSubmit} />
-      </div>
+      </Wrapper>
     );
   }
 }

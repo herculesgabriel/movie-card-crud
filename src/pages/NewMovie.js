@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import MovieForm from '../components/MovieForm';
+import Wrapper from '../styles/Wrapper';
 import * as movieAPI from '../services/movieAPI';
 
 class NewMovie extends Component {
@@ -25,9 +26,9 @@ class NewMovie extends Component {
 
   render() {
     return (
-      <div data-testid="new-movie">
+      <Wrapper data-testid="new-movie">
         <MovieForm onSubmit={this.handleSubmit} />
-      </div>
+      </Wrapper>
     );
   }
 }

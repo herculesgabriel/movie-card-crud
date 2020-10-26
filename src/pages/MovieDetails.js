@@ -77,11 +77,12 @@ class MovieDetails extends Component {
 
     if (loading) return <Loading />;
 
-    const { title, storyline, imagePath, genre, rating, subtitle } = this.state.movie;
+    const { title, storyline, genre, imagePath, rating, subtitle } = this.state.movie;
+    const path = (this.state.movie.imagePath.slice(0, 4) !== 'http') ? `../${imagePath}` : imagePath;
 
     return (
-      <MovieDetailsWrapper data-testid="movie-details">
-        <img alt="Movie Cover" src={`../${imagePath}`} />
+      <MovieDetailsWrapper data-testid="movie-details" >
+        <img alt="Movie Cover" src={path} />
         <MovieInfoWrapper>
           <h1>TITLE</h1>
           <p>{`${title}`}</p>
@@ -109,7 +110,7 @@ class MovieDetails extends Component {
           </Button>
         </div>
 
-      </MovieDetailsWrapper>
+      </MovieDetailsWrapper >
     );
   }
 }
